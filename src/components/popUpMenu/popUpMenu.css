@@ -1,0 +1,162 @@
+.menu-pop{
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+    width: 280px;
+    height: 400px;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 15px -5px rgba(10,10,11,0.75);
+    border-radius: 5px;
+}
+.top-menu{
+    width: 100%;
+    display: flex;
+    justify-content: right;
+}
+.top-menu i{
+    font-size: 2.8rem;
+    color: #ff0000;
+    cursor: pointer;
+    transition: .2s all ease-in;
+}
+.top-menu i:hover,
+.top-menu i:active{
+    margin-right: .2rem;
+}
+.add-member-box{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+    margin: 2rem 0 0 0;
+    width: 100%;
+}
+.error-box{
+    margin: .4rem 0 1.5rem 0;
+    padding: 0 2rem;
+    font-size: 1.3rem;
+    color: #ff0000;
+}
+.add-member-box input{
+    border: 1px solid #dadada;
+    border-radius: 15px;
+    outline: none;
+    padding: 0 .5rem;
+    font-family: inherit;
+    font-size: 1.35rem;
+    font-weight: 400;
+    height: 35px;
+    width: 80%;
+}
+.add-member-box button{
+    height: 34px;
+    width: 34px;
+    border-radius: 50%;
+    background-color: #359DFC;
+    color: #ffffff;
+    font-family: inherit;
+    border: 1px solid #359DFC;
+    font-size: 2rem;
+    transition: .1s all ease-in;
+    margin-left: .2rem;
+}
+.add-member-box button:hover,
+.add-member-box button:active{
+    background-color: #ffffff;
+    color: #359DFC;
+}
+/*  */
+.members-group{
+    width: 100%;
+}
+.members-group h3{
+    margin-left: .5rem;
+    margin-bottom: .3rem;
+    font-weight: 400;
+    font-size: 1.3rem;
+}
+.members-menu{
+    width: 100%;
+    height: 180px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: .5rem .9rem;
+}
+.member-menu{
+    width: 100%;
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: .5rem 0;
+    padding: .2rem .4rem;
+    border-radius: 5px;
+    transition: .1s all ease-in;
+    cursor: pointer;
+}
+.member-menu:hover,
+.member-menu:active{
+    background-color: #dadada;
+}
+.member-data{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.member-data img{
+    height: 30px;
+    width: 30px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-right: .5rem
+}
+.member-data p{
+    font-size: 1.3rem;
+}
+.member-cta{
+    font-size: 2rem;
+}
+.member-cta i{
+    color: #969696;
+    transition: .1s all ease-in;
+}
+.member-cta i:hover,
+.member-cta i:active{
+    margin-right: .2rem;
+    color: #000000;
+}
+/*  */
+.manu-bottom{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem .5rem;
+    margin: 2rem 0;
+}
+.bottom-delete{
+    background-color: #ffffff;
+    color: #ff0000;
+    width: 100px;
+    height: 30px;
+    border: 1px solid #ff0000;
+    border-radius: 10px;
+    font-weight: 500;
+    font-family: inherit;
+    transition: .1s all ease-in;
+}
+.bottom-delete:hover,
+.bottom-delete:active{
+    background-color: #ff0000;
+    color: #ffffff;
+}
+
+@media screen and (min-width: 1024px) {
+    .menu-pop{
+        display: none;
+    }
+    
+}

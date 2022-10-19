@@ -1,0 +1,44 @@
+.chat-app {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+}
+
+/* .low-visibility {
+    opacity: .2;
+    pointer-events: none;
+    transition: .3s all ease-in;
+    background: #ffffff;
+} */
+
+.chat-app-aside {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    position: relative;
+    z-index: 2;
+    background: #ffffff;
+}
+
+.chat-app-main {
+    height: 100%;
+    width: 100%;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+    position: relative;
+    transition: .3s all ease-in;
+}
+
+@media screen and (min-width: 850px) {
+    /* .chat-app-main {
+        flex-direction: row;
+    } */
+
+    /* .low-visibility {
+        opacity: 1;
+    } */
+}

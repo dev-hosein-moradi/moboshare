@@ -1,0 +1,140 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* colors */
+  --main-bg-color: #e5e5e5;
+  --button-bg-color: linear-gradient(to right bottom, #359dfc, #43bbf9, #7dd4f1, #b9e8ee, #f3faf9);
+  --thired-bg-color: #ebebeb;
+  --second-bg-color: #ffffff;
+
+  --main-box-shadow: 0px 0px 20px -7px rgba(53, 53, 53, 0.32);
+
+  --main-color: #359DFC;
+  --second-color: #edfaf8;
+
+  --important-text-color: #253237;
+  --main-text-color: #7f7f7f;
+  --second-text-color: #a5a5a5;
+
+  --main-border-color: #a5a5a5;
+  --second-border-color: #cccccc;
+
+  /* font size */
+  --icon-font-size: 2.3rem;
+  --large-font-size: 1.6rem;
+  --medium-font-size: 1.4rem;
+  --small-font-size: 1.25rem;
+
+  --large-icon-size: 2.5rem;
+  --medium-icon-size: 2rem;
+  --small-icon-size: 1.7rem;
+
+  --visual-height: 100%;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+  letter-spacing: .1rem;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background: #ffffff;
+  color: var(--main-text-color);
+}
+
+input,
+textarea,
+button,
+select,
+a,
+div {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  font-family: 'Roboto', sans-serif;
+  letter-spacing: .01rem;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-text-fill-color: var(--main-text-color);
+  box-shadow: 0 0 0 30px #f8fdfc inset !important;
+  -webkit-box-shadow: 0 0 0 30px #f8fdfc inset !important;
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  background: none;
+  border: 1px solid;
+  cursor: pointer;
+}
+
+.App {
+  width: 100%;
+  height: var(--visual-height);
+  overflow: hidden;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+  cursor: pointer;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* icon url */
+@import url('https://cdn-uicons.flaticon.com/uicons-brands/css/uicons-brands.css');
+@import url('https://cdn-uicons.flaticon.com/uicons-bold-rounded/css/uicons-bold-rounded.css');
+@import url('https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css');
+@import url('https://cdn-uicons.flaticon.com/uicons-regular-straight/css/uicons-regular-straight.css');
+@import url('https://cdn-uicons.flaticon.com/uicons-solid-rounded/css/uicons-solid-rounded.css');
+@import url('https://cdn-uicons.flaticon.com/uicons-bold-straight/css/uicons-bold-straight.css');
+@import url('https://cdn-uicons.flaticon.com/uicons-solid-straight/css/uicons-solid-straight.css');
+
+
+
+
+/* main inf css */
+/*
+:root{
+  --main-color
+  --second-color
+  
+  --main-bg-color
+  --second-bg-color
+}
+
+*/

@@ -1,0 +1,153 @@
+.topbar__container {
+    width: 100%;
+    height: 4.5rem;
+    background: var(--main-bg-color);
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    padding: .5rem;
+}
+
+.left__bar {
+    width: 50%;
+    color: var(--important-text-color);
+    padding-left: .8rem;
+}
+
+.left__bar h1 {
+    font-size: 2rem;
+    background: linear-gradient(to bottom right, #000000, #359DFC);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: toRight .8s 1 forwards ease-in-out;
+    transition: .2s all ease-in;
+}
+
+@keyframes toRight {
+    from {
+        transform: translateX(-100px);
+    }
+}
+
+.right__bar {
+    width: 50%;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-around;
+    color: var(--main-color);
+    padding: 0 .5rem;
+    animation: topTop .8s 1 forwards ease-in-out;
+    transition: .2s all ease-in;
+}
+
+@keyframes topTop {
+    from {
+        transform: translateX(100px);
+    }
+}
+
+.profile__img {
+    width: 39px;
+    height: 39px;
+    border-radius: 50%;
+    border: 2px solid var(--main-color);
+    transition: .2s all ease-in-out;
+}
+
+.profile__img img {
+    padding: .1rem;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    cursor: pointer;
+    object-fit: cover;
+}
+
+.profile__img:hover,
+.profile__img:active {
+    transform: translateY(-2px);
+}
+
+.bar__item {
+    cursor: pointer;
+    transition: .2s all ease-in-out;
+    position: relative;
+    width: 33px;
+    height: 33px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.bar__item i {
+    font-size: 2.2rem;
+    color: var(--main-color);
+}
+
+.bar__item:hover {
+    transform: translateY(-2px);
+}
+
+
+@media screen and (min-width: 550px) {
+    .right__bar {
+        width: 40%;
+    }
+
+    .left__bar {
+        width: 60%;
+    }
+}
+
+@media screen and (min-width: 750px) {
+    .topbar__container {
+        justify-content: space-between;
+    }
+
+    .left__bar {
+        width: 70%;
+    }
+
+    .right__bar {
+        width: 30%;
+    }
+
+    @keyframes topTop {
+        from {
+            transform: translateX(100px);
+        }
+    }
+
+    .right__bar .bar-item {
+        font-size: 2rem;
+        margin: 0rem;
+    }
+
+    .right__bar .bar__item:hover {
+        transform: translateY(3px);
+    }
+
+    .right__bar .profile__img:hover {
+        transform: translateY(3px);
+    }
+}
+
+@media screen and (min-width: 850px) {
+    .topbar__container {
+        border-bottom: 1px solid var(--second-border-color);
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .left__bar {
+        width: 80%;
+    }
+
+    .right__bar {
+        width: 20%;
+    }
+}
