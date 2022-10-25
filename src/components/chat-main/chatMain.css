@@ -351,10 +351,11 @@
     height: 38px;
     margin: 0 .5rem;
     outline: none;
-    border: 1px solid var(--border-bg-color);
+    border: 1px solid var(--second-border-color);
     border-radius: 5px;
     padding: .3rem .3rem;
     background: #fff;
+    color: #000;
 }
 
 .footer-box button {
