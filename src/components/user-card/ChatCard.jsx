@@ -1,4 +1,5 @@
 import axios from "axios";
+import { Image } from "cloudinary-react";
 import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../context/AuthContext";
 
@@ -51,28 +52,23 @@ const ChatCard = ({
 
   return (
     <div className="chat-item">
-      <img
-        loading="lazy"
-        crossOrigin="anonymous"
-        alt={
-          result
-            ? chatData?.username
-            : privateChat
-            ? friendData?.username
-            : chatData?.chatName
-        }
-        src={
-          result
-            ? chatData?.profilePicture
-              ? PF + chatData?.profilePicture
-              : PF + "person/noAvatar.png"
-            : privateChat
-            ? friendData?.profilePicture
-              ? PF + friendData?.profilePicture
-              : PF + "person/noAvatar.png"
-            : PF + "person/noAvatar.png"
-        }
-      />
+      {friendData?.profilePicture ? (
+        <Image
+          style={{ objectFit: "cover", objectPosition: "center" }}
+          className="img"
+          loading="lazy"
+          crossOrigin="anonymous"
+          cloudName="dclzpodah"
+          publicId={friendData?.profilePicture}
+        />
+      ) : (
+        <img
+          loading="lazy"
+          crossOrigin="anonymous"
+          src={PF + "person/noAvatar.png"}
+          alt="avatar"
+        />
+      )}
       <div className="chat-contact-info">
         <h3>
           {result

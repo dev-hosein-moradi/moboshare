@@ -33,7 +33,7 @@ const ChatAside = ({
         const res = await axios.get(`${baseUri}users/allusers/${user._id}`);
         setSearchResult(res.data);
       } catch (err) {
-        console.log(err);
+        return err;
       }
     };
     getAllUsers();
@@ -64,7 +64,7 @@ const ChatAside = ({
         );
         setCurrentChat(createConv.data);
       } catch (err) {
-        console.log(err);
+        return err;
       }
     }
     setIsAside(false);
@@ -77,7 +77,7 @@ const ChatAside = ({
         `${baseUri}conversations/${chatData?._id}`
       );
     } catch (err) {
-      console.log(err);
+      return err;
     }
     if (chatData?.isGroup) {
       setGroupChat(groupChat?.filter((group) => group?._id !== chatData?._id));
@@ -173,7 +173,11 @@ const ChatAside = ({
             <div className="aside-group-list">
               <div
                 onClick={() => {
-                  return setOpenGroupForm(true), setIsAside(!isAside), setCurrentChat(null);
+                  return (
+                    setOpenGroupForm(true),
+                    setIsAside(!isAside),
+                    setCurrentChat(null)
+                  );
                 }}
                 className="aside-group-creator"
               >

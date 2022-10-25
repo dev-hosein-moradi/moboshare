@@ -154,8 +154,7 @@ const Login = () => {
           backgroundColor: "#b9e8ee",
         },
       });
-      if (isFetching) {
-      }
+      setIsLoading(false);
     }
   }, [user, error, errorTxt, isFetching]);
 

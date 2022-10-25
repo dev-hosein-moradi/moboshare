@@ -1,7 +1,8 @@
 .chat-tool-bar {
-    background: var(--second-color);
+    background: #fff;
     width: 90%;
-    max-width: 300px;
+    max-width: 350px;
+    max-height: 300px;
     position: absolute;
     z-index: 5;
     margin: 0 5%;
@@ -12,6 +13,7 @@
     -webkit-box-shadow: 0px 0px 14px -8px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 0px 0px 14px -8px rgba(0, 0, 0, 0.75);
     opacity: 0;
+    overflow-y: auto;
 }
 
 .open-tool-bar {
@@ -82,7 +84,7 @@
     height: 30px;
     background: none;
     border: none;
-    border-bottom: 1px solid var(--icon-color);
+    border-bottom: 1px solid var(--main-color);
     outline: none;
     font-size: 1.2rem;
     font-weight: 500;
@@ -91,7 +93,7 @@
 
 .chat-name:disabled {
     border: none;
-    border-bottom: 1px solid var(--border-bg-color);
+    border-bottom: 1px solid var(--second-border-color);
     outline: none;
     background: none;
     padding: 0 .5rem;
@@ -108,14 +110,14 @@
     border-radius: 10px;
     margin: 0 .4rem;
     padding: 0 .3rem;
-    color: var(--second-text-color);
+    color: var(--main-text-color);
     transition: .2s all ease-in;
 }
 
 .name-input-box-btn button:hover,
 .name-input-box-btn button:active {
-    border-color: var(--icon-color);
-    color: var(--icon-color);
+    border-color: var(--main-color);
+    color: var(--main-color);
     box-shadow: 0px 3px 13px -8px rgba(0, 0, 0, 0.75);
     -webkit-box-shadow: 0px 3px 13px -8px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 0px 3px 13px -8px rgba(0, 0, 0, 0.75);
@@ -149,7 +151,7 @@
     height: 130px;
     width: 100%;
     overflow-y: auto;
-    border: 1px solid var(--border-bg-color);
+    border: 1px solid var(--second-border-color);
     padding: .3rem .5rem;
     border-radius: 5px;
 }
@@ -177,9 +179,9 @@
 .box-input-btn-toolbar button {
     width: 70px;
     height: 30px;
-    background-color: var(--icon-color);
-    border: 1px solid var(--icon-color);
-    color: var(--main-color);
+    background: var(--main-color);
+    border: 1px solid var(--main-color);
+    color: #fff;
     border-radius: 8px;
     margin-left: 1.2rem;
     font-size: 1.4rem;
@@ -189,8 +191,8 @@
 
 .box-input-btn-toolbar button:hover,
 .box-input-btn-toolbar button:active {
-    background-color: var(--main-color);
-    color: var(--icon-color);
+    background: #fff;
+    color: var(--main-color);
 }
 
 .panel-search-box-toolbar label {
@@ -205,7 +207,7 @@
     width: 200px;
     border-radius: 10px;
     padding: 0 .5rem;
-    border: 1px solid var(--border-bg-color);
+    border: 1px solid var(--second-border-color);
     outline: none;
     color: var(--main-text-color);
     font-size: 1.3rem;
@@ -234,7 +236,7 @@
     align-items: center;
     height: 32px;
     width: 200px;
-    border: 1px solid var(--border-bg-color);
+    border: 1px solid var(--second-border-color);
     border-radius: 5px;
     font-size: 1.25rem;
     padding: .2rem .5rem;
@@ -388,6 +390,4 @@
     color: var(--second-text-color);
 }
 
-@media screen and (min-width: 850px) {
-
-}
+@media screen and (min-width: 850px) {}

@@ -86,7 +86,8 @@
 
 .form-create-group {
     width: 260px;
-    height: auto;
+    height: 260px;
+    overflow-y: auto;
     max-height: 440px;
     background: #ffffff;
     border: 1px solid var(--main-border-color);
@@ -95,7 +96,7 @@
     top: 50%;
     transform: translate(-50%, -50%);
     transition: .6s all ease-in;
-    padding: .8rem;
+    padding: 1rem .8rem;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -135,6 +136,7 @@
 .form-create-group input {
     width: 90%;
     height: 35px;
+    min-height: 35px;
     margin: .2rem auto 1rem auto;
     border-radius: 10px;
     border: 1px solid var(--border-bg-color);
@@ -291,9 +293,9 @@
     margin: 0 .5rem;
     border-radius: 5px;
     outline: none;
-    border: 1px solid var(--border-bg-color);
+    border: 1px solid var(--main-border-color);
     transition: .2s all ease-in;
-    background: var(--thired-bg-color);
+    background: var(--second-color);
 }
 
 .form-group-create-cta .create:hover,

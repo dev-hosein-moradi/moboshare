@@ -1,4 +1,5 @@
 import axios from "axios";
+import { Image } from "cloudinary-react";
 import React, { useContext, useEffect, useRef, useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
 import { AuthContext } from "../../context/AuthContext";
@@ -50,7 +51,16 @@ const ChatMain = ({
           const res = await axios.get(`${baseUri}users?userId=${friendId}`);
           setCurrentPvMember(res.data);
         } catch (err) {
-          console.log(err);
+          toast.error(err, {
+            duration: 4000,
+            position: "top-right",
+            style: {
+              fontSize: "1.4rem",
+              fontWeight: "500",
+              fontFamily: "inherit",
+              backgroundColor: "#b9e8ee",
+            },
+          });
         }
       }
     };
@@ -63,7 +73,16 @@ const ChatMain = ({
         const res = await axios.get(`${baseUri}users/allusers/${user._id}`);
         setSearchResult(res.data);
       } catch (err) {
-        console.log(err);
+        toast.error(err, {
+          duration: 4000,
+          position: "top-right",
+          style: {
+            fontSize: "1.4rem",
+            fontWeight: "500",
+            fontFamily: "inherit",
+            backgroundColor: "#b9e8ee",
+          },
+        });
       }
     };
     getAllUsers();
@@ -77,7 +96,16 @@ const ChatMain = ({
           setMessages([]);
         }
       } catch (err) {
-        console.log(err);
+        toast.error(err, {
+          duration: 4000,
+          position: "top-right",
+          style: {
+            fontSize: "1.4rem",
+            fontWeight: "500",
+            fontFamily: "inherit",
+            backgroundColor: "#b9e8ee",
+          },
+        });
       }
     };
     getMessages();
@@ -95,7 +123,16 @@ const ChatMain = ({
         setMessages([...messages, sendMessage.data]);
         setNewText("");
       } catch (err) {
-        console.log(err);
+        toast.error(err, {
+          duration: 4000,
+          position: "top-right",
+          style: {
+            fontSize: "1.4rem",
+            fontWeight: "500",
+            fontFamily: "inherit",
+            backgroundColor: "#b9e8ee",
+          },
+        });
       }
       const updateConv = {
         latestMessage: newText,
@@ -106,7 +143,16 @@ const ChatMain = ({
           updateConv
         );
       } catch (error) {
-        console.log(error);
+        toast.error(error, {
+          duration: 4000,
+          position: "top-right",
+          style: {
+            fontSize: "1.4rem",
+            fontWeight: "500",
+            fontFamily: "inherit",
+            backgroundColor: "#b9e8ee",
+          },
+        });
       }
     }
   };
@@ -185,28 +231,38 @@ const ChatMain = ({
       <Toaster reverseOrder={false} />
       <nav className={`chat-navbar ${openGroupForm && "low-visibility"}`}>
         <div className="nav-chat-data">
-          {currentChat && (
-            <img
-              loading="lazy"
-              crossOrigin="anonymous"
-              alt={
-                currentChat
-                  ? currentChat.isGroup
-                    ? currentChat.chatName
-                    : currentPvMember?.username
-                  : newChat?.username
-              }
-              src={
-                currentChat
-                  ? !currentChat.isGroup
-                    ? currentPvMember?.profilePicture
-                      ? PF + currentPvMember?.profilePicture
+          {currentChat &&
+            (currentPvMember?.profilePicture ? (
+              <Image
+                style={{ objectFit: "cover", objectPosition: "center" }}
+                className="img"
+                loading="lazy"
+                crossOrigin="anonymous"
+                cloudName="dclzpodah"
+                publicId={currentPvMember?.profilePicture}
+              />
+            ) : (
+              <img
+                loading="lazy"
+                crossOrigin="anonymous"
+                alt={
+                  currentChat
+                    ? currentChat.isGroup
+                      ? currentChat.chatName
+                      : currentPvMember?.username
+                    : newChat?.username
+                }
+                src={
+                  currentChat
+                    ? !currentChat.isGroup
+                      ? currentPvMember?.profilePicture
+                        ? PF + currentPvMember?.profilePicture
+                        : PF + "person/noAvatar.png"
                       : PF + "person/noAvatar.png"
                     : PF + "person/noAvatar.png"
-                  : PF + "person/noAvatar.png"
-              }
-            />
-          )}
+                }
+              />
+            ))}
 
           <div className="chat-data-member">
             <h6>
@@ -277,14 +333,23 @@ const ChatMain = ({
                     onClick={() => addUserToNewGroup(user)}
                     className={`user`}
                   >
-                    <img
-                      alt={user?.username}
-                      src={
-                        user?.profilePicture
-                          ? PF + user?.profilePicture
-                          : PF + "person/noAvatar.png"
-                      }
-                    />
+                    {user?.profilePicture ? (
+                      <Image
+                        style={{ objectFit: "cover", objectPosition: "center" }}
+                        className="img"
+                        loading="lazy"
+                        crossOrigin="anonymous"
+                        cloudName="dclzpodah"
+                        publicId={user?.profilePicture}
+                      />
+                    ) : (
+                      <img
+                        loading="lazy"
+                        crossOrigin="anonymous"
+                        src={PF + "person/noAvatar.png"}
+                        alt="avatar"
+                      />
+                    )}
                     <h6>{user?.username}</h6>
                   </li>
                 ))}

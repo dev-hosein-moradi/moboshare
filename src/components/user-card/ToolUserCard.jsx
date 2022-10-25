@@ -1,4 +1,5 @@
 import axios from "axios";
+import { Image } from "cloudinary-react";
 import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
@@ -31,16 +32,24 @@ const ToolUserCard = ({
 
   return (
     <li className="tool-member-item">
-      <img
-        alt={currentMember?.username}
-        src={
-          currentMember
-            ? currentMember.profilePicture
-              ? PF + currentMember.profilePicture
-              : PF + "person/noAvatar.png"
-            : PF + "person/noAvatar.png"
-        }
-      />
+      {currentMember?.profilePicture ? (
+        <Image
+          style={{ objectFit: "cover", objectPosition: "center" }}
+          className="img"
+          loading="lazy"
+          crossOrigin="anonymous"
+          cloudName="dclzpodah"
+          publicId={currentMember?.profilePicture}
+        />
+      ) : (
+        <img
+          loading="lazy"
+          crossOrigin="anonymous"
+          src={PF + "person/noAvatar.png"}
+          alt="avatar"
+        />
+      )}
+
       <div className="member-tool-item-name">
         <p>{currentMember?.username}</p>
         {currentMember?._id === groupAdmin && (

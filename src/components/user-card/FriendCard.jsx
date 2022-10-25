@@ -1,3 +1,4 @@
+import { Image } from "cloudinary-react";
 import React from "react";
 import { Link } from "react-router-dom";
 import "./userCard.css";
@@ -8,16 +9,23 @@ const FriendCard = ({ friendData }) => {
   return (
     <Link to={"/profile/" + friendData.username}>
       <div className="friends-item">
-        <img
-          loading="lazy"
-          crossOrigin="anonymous"
-          alt=""
-          src={
-            friendData.profilePicture
-              ? PF + friendData.profilePicture
-              : PF + "person/noAvatar.png"
-          }
-        />
+        {friendData?.profilePicture ? (
+          <Image
+            style={{ objectFit: "cover", objectPosition: "center" }}
+            className="img"
+            loading="lazy"
+            crossOrigin="anonymous"
+            cloudName="dclzpodah"
+            publicId={friendData?.profilePicture}
+          />
+        ) : (
+          <img
+            loading="lazy"
+            crossOrigin="anonymous"
+            src={PF + "person/noAvatar.png"}
+            alt="avatar"
+          />
+        )}
         <h3>{friendData.username}</h3>
       </div>
     </Link>

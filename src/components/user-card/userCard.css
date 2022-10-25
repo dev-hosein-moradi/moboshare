@@ -181,7 +181,7 @@
 .tool-member-item {
     width: 220px;
     height: 35px;
-    border-bottom: 1px solid var(--border-bg-color);
+    border-bottom: 1px solid var(--second-border-color);
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -191,8 +191,9 @@
 .tool-member-item img {
     width: 25px;
     height: 25px;
+    object-fit: cover;
     border-radius: 50%;
-    border: 1px solid var(--border-bg-color);
+    border: 1px solid var(--second-border-color);
     margin-right: .8rem;
 }
 
@@ -207,7 +208,7 @@
 }
 
 .member-tool-item-name .item-admin {
-    color: var(--icon-color);
+    color: var(--main-color);
     font-size: 1rem;
 }
 
@@ -216,14 +217,14 @@
     border-radius: 5px;
     height: 30px;
     padding: 0 .3rem;
-    border: 1px solid var(--border-bg-color);
+    border: 1px solid var(--second-border-color);
     transition: .2s all ease-in;
 }
 
 .tool-item-btn:hover,
 .tool-item-btn:active {
-    color: var(--icon-color);
-    border-color: var(--icon-color);
+    color: var(--main-color);
+    border-color: var(--main-color);
     transform: scale(1.01, 1.01);
     box-shadow: 0px 0px 14px -8px rgba(13, 13, 59, 0.71);
     -webkit-box-shadow: 0px 0px 14px -8px rgba(13, 13, 59, 0.71);

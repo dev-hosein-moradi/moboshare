@@ -1,4 +1,5 @@
 import axios from "axios";
+import { Image } from "cloudinary-react";
 import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../context/AuthContext";
 import ToolUserCard from "../user-card/ToolUserCard";
@@ -147,8 +148,7 @@ const ChatToolBar = ({
     } catch (err) {
       console.log(err);
     }
-    setIsEditName(false
-      );
+    setIsEditName(false);
   };
 
   return (
@@ -284,14 +284,26 @@ const ChatToolBar = ({
                       key={user._id}
                       onClick={() => addNewUserToGroup(user)}
                     >
-                      <img
-                        alt={user?.username}
-                        src={
-                          user?.profilePicture
-                            ? PF + user.profilePicture
-                            : PF + "person/noAvatar.png"
-                        }
-                      />
+                      {user?.profilePicture ? (
+                        <Image
+                          style={{
+                            objectFit: "cover",
+                            objectPosition: "center",
+                          }}
+                          className="img"
+                          loading="lazy"
+                          crossOrigin="anonymous"
+                          cloudName="dclzpodah"
+                          publicId={user?.profilePicture}
+                        />
+                      ) : (
+                        <img
+                          loading="lazy"
+                          crossOrigin="anonymous"
+                          src={PF + "person/noAvatar.png"}
+                          alt="avatar"
+                        />
+                      )}
                       <p>{user?.username}</p>
                     </li>
                   ))}
