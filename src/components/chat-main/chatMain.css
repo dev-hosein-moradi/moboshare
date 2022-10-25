@@ -354,6 +354,7 @@
     border: 1px solid var(--border-bg-color);
     border-radius: 5px;
     padding: .3rem .3rem;
+    background: #fff;
 }
 
 .footer-box button {
