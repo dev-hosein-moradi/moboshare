@@ -24,11 +24,13 @@ const Share = () => {
     };
     if (file) {
       setIsLoading(true);
+
       const data = new FormData();
       const fileName = Date.now() + file.name;
       data.append("name", fileName);
       data.append("file", file);
       data.append("upload_preset", "yefgbqyx");
+
       try {
         const res = await axios.post(
           `https://api.cloudinary.com/v1_1/dclzpodah/image/upload`,
@@ -47,6 +49,7 @@ const Share = () => {
           },
         });
       }
+
     } else {
       toast.error("you should select image!", {
         duration: 3000,
@@ -126,13 +129,7 @@ const Share = () => {
             />
           </div>
         </div>
-        {/* <hr
-          style={{
-            width: "90%",
-            margin: "1rem auto",
-            border: "1px solid #cccccc",
-          }}
-        /> */}
+       
         {file && (
           <div className="preview__selected__img">
             <img loading="lazy" src={URL.createObjectURL(file)} alt="" />

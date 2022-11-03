@@ -873,7 +873,7 @@
     }
 
     .user__data {
-        border-left: 1px solid var(--border-bg-color);
+        border-left: 1px solid var(--second-border-color);
         width: 40%;
     }
 
@@ -892,7 +892,7 @@
     }
 
     .user__data {
-        border-left: 1px solid var(--border-bg-color);
+        border-left: 1px solid var(--second-border-color);
         width: 30%;
     }
 

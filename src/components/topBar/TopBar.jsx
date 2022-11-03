@@ -8,6 +8,7 @@ const TopBar = () => {
   const { user } = useContext(AuthContext);
   /* user env url to import photo path */
   const PF = process.env.REACT_APP_PUBLIC_FOLDER;
+  
   return (
     <header className={`topbar__container `}>
       <div className={`left__bar`}>

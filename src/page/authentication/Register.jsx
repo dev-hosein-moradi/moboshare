@@ -1,10 +1,4 @@
-import React, {
-  useContext,
-  useEffect,
-  useReducer,
-  useRef,
-  useState,
-} from "react";
+import React, { useContext, useEffect, useReducer, useState } from "react";
 import "./auth.css";
 import { useNavigate } from "react-router-dom";
 import { registerCall } from "../../apiCalls";
@@ -81,9 +75,10 @@ const confirmPasswordReducer = (state, action) => {
 const Register = () => {
   const navigate = useNavigate();
   const PF = process.env.REACT_APP_PUBLIC_FOLDER;
-  
+
   const { user, isFetching, error, errorTxt, dispatch } =
     useContext(AuthContext);
+
   const [passVisib, setPassVisib] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -114,9 +109,7 @@ const Register = () => {
   const [fullName, setFullName] = useState("");
   // profile picture
   const [file, setFile] = useState(null);
-
   const [isFormValid, setIsFormValid] = useState(false);
-
   /* register form error state */
   const [errors, setErrors] = useState({
     usernameErr: "",
@@ -376,7 +369,7 @@ const Register = () => {
             <i className="fa-brands fa-instagram"></i>
           </a>
           <a
-            href="https://github.com/hosein7379m"
+            href="https://github.com/dev-hosein-moradi"
             target="_blank"
             rel="noreferrer"
             className="links__iconbox github"
@@ -496,7 +489,6 @@ const Register = () => {
                   passVisib ? "fa-eye-slash" : "fa-eye"
                 }`}
               ></i>
-              {/* <i class="fa-regular fa-eye-slash"></i> */}
             </div>
             {/* error text */}
             <p>

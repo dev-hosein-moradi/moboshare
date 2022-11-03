@@ -11,28 +11,32 @@ import toast, { Toaster } from "react-hot-toast";
 
 const Profile = () => {
   const { user: currentUser } = useContext(AuthContext);
-  const [contentSwitch, setContentSwitch] = useState(3);
+
   const baseUri = process.env.REACT_APP_BASE_API;
+  /* user env url to import photo path */
+  const PF = process.env.REACT_APP_PUBLIC_FOLDER;
+
   let menuRef = useRef();
+  const username = useParams().username;
+
+  const [contentSwitch, setContentSwitch] = useState(3);
   const [isAside, setAside] = useState(false);
+
   /* get user */
   const [user, setUser] = useState({});
   const [avatar, setAvatar] = useState(null);
-  /* user env url to import photo path */
-  const PF = process.env.REACT_APP_PUBLIC_FOLDER;
-  /*  */
-  const username = useParams().username;
+
 
   let width =
     window.innerWidth ||
     document.documentElement.clientWidth ||
     document.body.clientWidth;
-
   const resize = () => {
     if (width >= 750) {
       setAside(false);
     }
   };
+  
   useEffect(() => {
     window.onresize = resize;
     /* handle onclick put side */

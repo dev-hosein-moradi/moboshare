@@ -20,7 +20,7 @@ const HomeSideBar = ({ setAside }) => {
       </div>
 
       <div className="main__side__item">
-        <div className="item">
+        <div className="item" onClick={() => navigate("/messenger")}>
           <i className="fa-solid fa-message"></i>
           <h3>Chat</h3>
         </div>

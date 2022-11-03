@@ -6,15 +6,15 @@ import Feed from "../../components/feed/Feed";
 import NavSwitchContent from "../../components/nav-switch-handler/NavSwitchContent";
 import HomeSideBar from "../../components/home-sidebar/HomeSideBar";
 
-const Home = ({ username }) => {
+const Home = () => {
   let menuRef = useRef();
   const { user } = useContext(AuthContext);
-  const [contentSwitch, setContentSwitch] = useState(3);
+  const [contentSwitch, setContentSwitch] = useState(3); //switch handler for show content in home page
 
   const [isAside, setAside] = useState(false);
 
   useEffect(() => {
-    /* handle onclick put side */
+    /* click handler for aside to close sidebar when click out side */
     let handlerOutSide = (e) => {
       if (e.target.classList[1] === "uil-bars" && isAside) {
         setAside(false);
@@ -28,8 +28,9 @@ const Home = ({ username }) => {
       document.removeEventListener("mousedown", handlerOutSide);
     };
   }, [isAside]);
+
+   /* handler for visual height and width */
   useEffect(() => {
-    /* handle visual height */
     const handleHeight = () => {
       document.documentElement.style.setProperty(
         "--visual-height",

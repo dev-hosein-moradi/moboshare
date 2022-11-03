@@ -193,7 +193,7 @@ const Login = () => {
             <i className="fa-brands fa-instagram"></i>
           </a>
           <a
-            href="https://github.com/hosein7379m"
+            href="https://github.com/dev-hosein-moradi"
             target="_blank"
             rel="noreferrer"
             className="links__iconbox github"
@@ -281,7 +281,6 @@ const Login = () => {
                   passVisib ? "fa-eye-slash" : "fa-eye"
                 }`}
               ></i>
-              {/* <i class="fa-regular fa-eye-slash"></i> */}
             </div>
             {/* error text */}
             <p>

@@ -35,6 +35,7 @@ const ChatMain = ({
   const [searchKey, setSearchKey] = useState("");
   const [searchResult, setSearchResult] = useState([]);
   const [currentPvMember, setCurrentPvMember] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
 
   /*  */
   useEffect(() => {
@@ -118,10 +119,12 @@ const ChatMain = ({
       text: newText,
     };
     if (currentChat) {
+      setIsLoading(true);
       try {
         const sendMessage = await axios.post(`${baseUri}messages/`, newMess);
         setMessages([...messages, sendMessage.data]);
         setNewText("");
+        setIsLoading(false);
       } catch (err) {
         toast.error(err, {
           duration: 4000,
@@ -405,7 +408,7 @@ const ChatMain = ({
             value={newText}
             onChange={(e) => setNewText(e.target.value)}
           />
-          <button onClick={handleSendNewMessage}>
+          <button onClick={handleSendNewMessage} disabled={isLoading}>
             <i className="fi fi-bs-paper-plane"></i>
           </button>
         </div>

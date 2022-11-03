@@ -114,27 +114,3 @@ button {
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
-
-/* icon url */
-@import url('https://cdn-uicons.flaticon.com/uicons-brands/css/uicons-brands.css');
-@import url('https://cdn-uicons.flaticon.com/uicons-bold-rounded/css/uicons-bold-rounded.css');
-@import url('https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css');
-@import url('https://cdn-uicons.flaticon.com/uicons-regular-straight/css/uicons-regular-straight.css');
-@import url('https://cdn-uicons.flaticon.com/uicons-solid-rounded/css/uicons-solid-rounded.css');
-@import url('https://cdn-uicons.flaticon.com/uicons-bold-straight/css/uicons-bold-straight.css');
-@import url('https://cdn-uicons.flaticon.com/uicons-solid-straight/css/uicons-solid-straight.css');
-
-
-
-
-/* main inf css */
-/*
-:root{
-  --main-color
-  --second-color
-  
-  --main-bg-color
-  --second-bg-color
-}
-
-*/

@@ -370,6 +370,10 @@
     transition: .2s all ease-in;
 }
 
+.footer-box button:disabled {
+    opacity: .3;
+}
+
 .footer-box button:hover,
 .footer-box button:active {
     transform: scale(.95, .95);
